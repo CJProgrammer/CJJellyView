@@ -1,5 +1,7 @@
 # CJJellyView
 一个果冻弹窗效果，可以自定义位置和弹出方向，添加任意内容，几行代码就可以搞定！
+效果图：
+![CJJellyView.gif](https://github.com/CJProgrammer/CJJellyView/blob/master/CJJellyView.gif)
 
 ```
 /**
