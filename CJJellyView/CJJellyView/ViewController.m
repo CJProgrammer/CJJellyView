@@ -8,11 +8,13 @@
 
 #import "ViewController.h"
 #import "CJJellyView.h"
+#import "CustomView.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) UIButton * refreshButton;
 @property (nonatomic, strong) CJJellyView * jellyView;
+@property (nonatomic, strong) CJJellyView * jellyView1;
 
 @end
 
@@ -37,10 +39,19 @@
     }];
     [self.view addSubview:_jellyView];
     
+    _jellyView1 = [[CJJellyView alloc]initWithPoint:CGPointMake(self.view.frame.size.width/2, 350) anchorPoint:CGPointMake(0.5, 0) size:CGSizeMake(200, 200)];
+    CustomView * customView = [[CustomView alloc]initWithFrame:_jellyView1.bounds];
+    [_jellyView1 addSubview:customView];
+    [_jellyView1 setClickBlock:^{
+        // 点击回调
+    }];
+    [self.view addSubview:_jellyView1];
+    
 }
 
 - (void)clickRefresh {
     [_jellyView show];
+    [_jellyView1 show];
 }
 
 
